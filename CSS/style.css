@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Ysabeau+Infant&display=swap");
+
+/* || RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+/* || VARIABLES */
+
+:root {
+  /* FONTS */
+  --FF: "Ysabeau Infant", sans-serif;
+  --FF-HEADINGS: "Nunito", sans-serif;
+  --FS: clamp(0.2rem, 2.2vh, 1.5rem);
+
+  /* COLORS */
+  --BGCOLOR: floralwhite;
+  --BGCOLOR-FADE: hsla(0, 100%, 99%, 0.742);
+  --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
+  --FONT-COLOR: #000;
+  --HIGHLIGHT-COLOR: #fff;
+  --LINK-COLOR: #fff;
+  --LINK-HOVER: floralwhite;
+  --LINK-HOVER-TEXT: #000;
+  --NAV-BGCOLOR: #000;
+  --BORDER-COLOR: #333;
+  --HERO-COLOR: #fff;
+  --BGCOLOR-EM:rgb(237, 234, 222);
+
+  /* BORDERS */
+  --BORDERS: 1px solid var(--BORDER-COLOR);
+
+  /* STANDARD PADDING */
+    --PADDING-TB: 0.25em;
+    --PADDING-SIDE:2.5%;
+
+  /* STANDARD MARGIN */
+}
+
+/* || UTILITY CLASSES */
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+/* || GENERAL STYLES */
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--FS);
+  font-family: var(--FF);
+  background-color: var(--BGCOLOR);
+  background-image: var(--BGIMAGE);
+}
+
+body {
+  background-color: var(--BGCOLOR);
+  background-image: var(--BGIMAGE);
+  color: var(--FONT-COLOR);
+  min-height: 500vh;
+  min-width: 100%;
+}
+
+h1,
+h2,
+h4,
+a {
+  font-family: var(--FF-HEADINGS);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+h2 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: var(--HIGHLIGHT-COLOR);
+}
+
+h4 {
+  margin-top: 2em;
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  display: block;
+  flex-grow: 1;
+}
+
+a:any-link {
+  color: var(--LINK-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+  background-color: var(--LINK-HOVER);
+  color: var(--LINK-HOVER-TEXT);
+}
+
+a:active {
+  color: var(--LINK-HOVER-TEXT);
+}
+
+/* || HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header__nav {
+  background-color: var(--NAV-BGCOLOR);
+  border-bottom: var(--BORDERS);
+  font-weight: bold;
+  box-shadow: 0 6px 5px -5px var(--BORDER-COLOR);
+}
+
+.header__ul {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.header__ul li {
+  flex-grow: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+/* || HERO */
+
+.hero {
+  position: relative;
+}
+
+.hero__h1 {
+  color: var(--HERO-COLOR);
+  padding: 0.25em 0.5em;
+  font-size: 12vh;
+  font-family: var(--FF);
+  text-shadow: 2px 3px 6px var(--BORDER-COLOR);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #000; */
+}
+
+.hero__img {
+  min-width: 100%;
+  height: 75vh;
+}
+
+.hero__p-left,
+.hero__p-right {
+  font-size: 1.1em;
+  text-shadow: 2px 2px 10px var(--BGCOLOR);
+}
+
+.hero__p-left {
+  position: absolute;
+  left: 2vw;
+  top: 70vh;
+}
+
+.hero__p-right {
+  position: absolute;
+  right: 2vw;
+  top: 70vh;
+}
+
+/* || MAIN */
+
+.main{
+    padding:var(--PADDING-TB) var(--PADDING-SIDE);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main__article{
+    scroll-margin-top: 0.2rem;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__h2{
+    padding: 0.2em;
+    margin-top: 7vh;
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--NAV-BGCOLOR);
+    max-width: 12em;
+    height: auto;
+    box-shadow: 0 7px 5px -5px var(--BORDER-COLOR);
+}
+
+.about__info{
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.about__em{
+    background-color: var(--BGCOLOR-EM);
+    padding-left: 2em;
+    padding-top: 0.28em;
+    padding-right: 0.28em;
+    padding-bottom: 0.28em;
+    margin-bottom: 7vh;
+}
+
+/* || MENU */
+.main__div{
+    scroll-margin-top:3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__h2{
+    padding: 0.2em;
+    margin-top: 7vh;
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--NAV-BGCOLOR);
+    max-width: 12em;
+    height: auto;
+    box-shadow: 0 7px 5px -5px var(--BORDER-COLOR);
+}
