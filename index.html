@@ -8,12 +8,33 @@
     <title>The Cafe</title>
     <link rel="icon" href="IMG/latte-art.png" type="image/x-icon" />
     <link rel="stylesheet" href="CSS/style.css" />
+
+    <script>
+      // Tabbed Menu
+      function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(
+            " w3-dark-grey",
+            ""
+          );
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+      }
+      document.getElementById("myLink").click();
+    </script>
   </head>
   <body>
     <!-- || NAVIGATION BAR -->
-    <header>
-      <nav>
-        <ul>
+    <header class="header">
+      <nav class="header__nav">
+        <ul class="header__ul">
           <li>
             <a href="#home">HOME</a>
           </li>
@@ -31,8 +52,13 @@
     </header>
 
     <!-- || CAFE HERO CLASS -->
-    <section>
-      <h1>The Cafe</h1>
+    <section id="home" class="hero">
+      <h1 class="hero__h1 center">
+        the <br />
+        Cafe
+      </h1>
+      <p class="hero__p-left">Open from 6am to 5pm</p>
+      <p class="hero__p-right">15 Adr street, 5015</p>
       <figure>
         <img
           src="IMG/Cafe_top.jpg"
@@ -40,36 +66,35 @@
           title="We love coffee"
           width="1280"
           height="848"
+          class="hero__img"
         />
-        <figcaption>Coffee Shop Banner</figcaption>
+        <figcaption class="offscreen">Coffee Shop Banner</figcaption>
       </figure>
-      <p>Open from 6am to 5pm</p>
-      <p>15 Adr street, 5015</p>
     </section>
 
     <!-- || ABOUT THE CAFE -->
-    <main>
-      <article>
-        <h2>ABOUT THE CAFE</h2>
-        <p>
+    <main class="main">
+      <article id="about" class="main__article about">
+        <h2 class="about__h2">ABOUT THE CAFE</h2>
+        <p class="about__info">
           The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit
           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
           exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
-        <p>
+        <p class="about__info">
           In addition to our full espresso and brew bar menu, we serve fresh
           made-to-order breakfast and lunch sandwiches, as well as a selection
           of sides and salads and other good stuff.
         </p>
-        <section>
-          <p>
+        <section class="about__em">
+          <p class="about__info">
             <i>
               "Use products from nature for what it's worth - but never too
               early, nor too late." Fresh is the new sweet.</i
             >
           </p>
-          <p>Chef, Coffeeist and Owner: Liam Brown</p>
+          <p class="about__info">Chef, Coffeeist and Owner: Liam Brown</p>
         </section>
         <section>
           <figure>
@@ -80,82 +105,84 @@
               width="1280"
               height="847"
             />
-            <figcaption>Our cafe's interior</figcaption>
+            <figcaption class="offscreen">Our cafe's interior</figcaption>
           </figure>
-          <p>Opening hours: everyday from 6am to 5pm.</p>
-          <p>Address: 15 Adr street, 5015, NY</p>
+          <p class="about__info">
+            <span class="nowrap bold">Opening hours:</span> everyday from 6am to
+            5pm.
+          </p>
+          <p class="about__info">
+            <span class="nowrap bold">Address: </span>15 Adr street, 5015, NY
+          </p>
         </section>
       </article>
 
       <!--  || CAFE MENU -->
-      <div>
-        <h2>The Menu</h2>
-        <article>
-          <h2>Eat</h2>
-          <h4>Bread Basket</h4>
-          <p>Assortment of fresh baked fruit breads and muffins 5.50</p>
-          <h4>Honey Almond Granola with Fruits</h4>
-          <p>
-            Natural cereal of honey toasted oats, raisins, almonds and dates
-            7.00
-          </p>
-          <h4>Belgian Waffle</h4>
-          <p>Vanilla flavored batter with malted flour 7.50</p>
-          <h4>Scrambled eggs</h4>
-          <p>
-            Scrambled eggs, roasted red pepper and garlic, with green onions
-            7.50
-          </p>
-          <h4>Blueberry Pancakes</h4>
-          <p>With syrup, butter and lots of berries 8.50</p>
-        </article>
+      <div id="menu" class="main__div">
+        <h2 class="menu__h2">THE MENU</h2>
+        <div>
+          <div>
+            <a
+              href="javascript:void(0)"
+              onclick="openMenu(event, 'Eat');"
+              id="myLink"
+            >
+              <div class="tablink">Eat</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+              <div class="tablink">Drink</div>
+            </a>
+          </div>
 
-        <article>
-          <h2>Drink</h2>
-          <h4>Coffee</h4>
-          <p>Regular coffee 2.50</p>
-          <h4>Chocolato</h4>
-          <p>Chocolate espresso with milk 4.50</p>
-          <h4>Corretto</h4>
-          <p>Whiskey and coffee 5.00</p>
-          <h4>Iced tea</h4>
-          <p>Hot tea, except not hot 3.00</p>
-          <h4>Soda</h4>
-          <p>Coke, Sprite, Fanta, etc. 2.50</p>
-        </article>
+          <div id="Eat" class="menu">
+            <h5>Bread Basket</h5>
+            <p>Assortment of fresh baked fruit breads and muffins 5.50</p>
+            <br />
 
-        <section>
-          <figure>
-            <img
-              src="IMG/Coffee_cup.jpg"
-              alt="Coffee cup"
-              title="Hot Coffee"
-              width="1280"
-              height="853"
-            />
-          </figure>
-        </section>
+            <h5>Honey Almond Granola with Fruits</h5>
+            <p>
+              Natural cereal of honey toasted oats, raisins, almonds and dates
+              7.00
+            </p>
+            <br />
+
+            <h5>Belgian Waffle</h5>
+            <p>Vanilla flavored batter with malted flour 7.50</p>
+            <br />
+
+            <h5>Scrambled eggs</h5>
+            <p>
+              Scrambled eggs, roasted red pepper and garlic, with green onions
+              7.50
+            </p>
+            <br />
+
+            <h5>Blueberry Pancakes</h5>
+            <p>With syrup, butter and lots of berries 8.50</p>
+          </div>
+
+          <div id="Drinks" class="menu">
+            <h5>Coffee</h5>
+            <p>Regular coffee 2.50</p>
+            <br />
+
+            <h5>Chocolato</h5>
+            <p>Chocolate espresso with milk 4.50</p>
+            <br />
+
+            <h5>Corretto</h5>
+            <p>Whiskey and coffee 5.00</p>
+            <br />
+
+            <h5>Iced tea</h5>
+            <p>Hot tea, except not hot 3.00</p>
+            <br />
+
+            <h5>Soda</h5>
+            <p>Coke, Sprite, Fanta, etc. 2.50</p>
+          </div>
+        </div>
       </div>
-      <!-- || CAFE LOCATION -->
-      <article>
-        <h2>Where to find us</h2>
-        <p>Find us at some address at some place</p>
-        <figure>
-          <img
-            src="IMG/Cross_roads.jpg"
-            alt="Cafe's location"
-            title="Our cafe's ariel view"
-            width="1280"
-            height="853"
-          />
-          <figcaption>Our Location</figcaption>
-        </figure>
-        <p>
-          FYI! We offer full-service catering for any event, large or small. We
-          understand your needs and we will cater the food to satisfy the
-          biggerst criteria of them all, both look and taste.
-        </p>
-      </article>
       <!-- || CONTACT FORM -->
       <article>
         <p>
@@ -213,7 +240,7 @@
         </form>
       </article>
     </main>
-    
+
     <!-- || FOOTER FOR COPYRIGHT -->
     <footer>
       <p>Copyright &copy; The cafe</p>
