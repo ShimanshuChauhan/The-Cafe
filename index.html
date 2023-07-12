@@ -8,28 +8,8 @@
     <title>The Cafe</title>
     <link rel="icon" href="IMG/latte-art.png" type="image/x-icon" />
     <link rel="stylesheet" href="CSS/style.css" />
-
-    <script>
-      // Tabbed Menu
-      function openMenu(evt, menuName) {
-        var i, x, tablinks;
-        x = document.getElementsByClassName("menu");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < x.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(
-            " w3-dark-grey",
-            ""
-          );
-        }
-        document.getElementById(menuName).style.display = "block";
-        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-      }
-      document.getElementById("myLink").click();
-    </script>
   </head>
+
   <body>
     <!-- || NAVIGATION BAR -->
     <header class="header">
@@ -120,79 +100,116 @@
       <!--  || CAFE MENU -->
       <div id="menu" class="main__div">
         <h2 class="menu__h2">THE MENU</h2>
-        <div>
-          <div>
+        <div class="main__div-table">
+          <div class="menu__tab">
             <a
               href="javascript:void(0)"
               onclick="openMenu(event, 'Eat');"
               id="myLink"
             >
-              <div class="tablink">Eat</div>
+              <p class="tablink">Eat</p>
             </a>
             <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-              <div class="tablink">Drink</div>
+              <p class="tablink">Drink</p>
             </a>
           </div>
 
           <div id="Eat" class="menu">
-            <h5>Bread Basket</h5>
-            <p>Assortment of fresh baked fruit breads and muffins 5.50</p>
+            <h4>Bread Basket</h4>
+            <p class="w3-text-grey">
+              Assortment of fresh baked fruit breads and muffins 5.50
+            </p>
             <br />
 
-            <h5>Honey Almond Granola with Fruits</h5>
-            <p>
+            <h4>Honey Almond Granola with Fruits</h4>
+            <p class="w3-text-grey">
               Natural cereal of honey toasted oats, raisins, almonds and dates
               7.00
             </p>
             <br />
 
-            <h5>Belgian Waffle</h5>
-            <p>Vanilla flavored batter with malted flour 7.50</p>
+            <h4>Belgian Waffle</h4>
+            <p class="w3-text-grey">
+              Vanilla flavored batter with malted flour 7.50
+            </p>
             <br />
 
-            <h5>Scrambled eggs</h5>
-            <p>
+            <h4>Scrambled eggs</h4>
+            <p class="w3-text-grey">
               Scrambled eggs, roasted red pepper and garlic, with green onions
               7.50
             </p>
             <br />
 
-            <h5>Blueberry Pancakes</h5>
-            <p>With syrup, butter and lots of berries 8.50</p>
+            <h4>Blueberry Pancakes</h4>
+            <p class="w3-text-grey">
+              With syrup, butter and lots of berries 8.50
+            </p>
           </div>
 
           <div id="Drinks" class="menu">
-            <h5>Coffee</h5>
-            <p>Regular coffee 2.50</p>
+            <h4>Coffee</h4>
+            <p class="w3-text-grey">Regular coffee 2.50</p>
             <br />
 
-            <h5>Chocolato</h5>
-            <p>Chocolate espresso with milk 4.50</p>
+            <h4>Chocolato</h4>
+            <p class="w3-text-grey">Chocolate espresso with milk 4.50</p>
             <br />
 
-            <h5>Corretto</h5>
-            <p>Whiskey and coffee 5.00</p>
+            <h4>Corretto</h4>
+            <p class="w3-text-grey">Whiskey and coffee 5.00</p>
             <br />
 
-            <h5>Iced tea</h5>
-            <p>Hot tea, except not hot 3.00</p>
+            <h4>Iced tea</h4>
+            <p class="w3-text-grey">Hot tea, except not hot 3.00</p>
             <br />
 
-            <h5>Soda</h5>
-            <p>Coke, Sprite, Fanta, etc. 2.50</p>
+            <h4>Soda</h4>
+            <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
           </div>
         </div>
+        <section class="main__div-img">
+          <figure>
+            <img
+              src="IMG/Coffee_cup.jpg"
+              alt="Hot coffee while reading"
+              width="1280"
+              height="
+            853"
+            />
+            <figcaption class="offscreen">
+              We love coffee while reading books
+            </figcaption>
+          </figure>
+        </section>
       </div>
       <!-- || CONTACT FORM -->
-      <article>
+      <article id="where" class="contact">
+        <div class="contact__heading"><h2 class="contact__h2">WHERE TO FIND US</h2></div>
+        <p class="contact__p">Find us at some address at some place.</p>
+        <figure class="contact__img">
+          <img
+            src="IMG/Cross_roads.jpg"
+            alt="Cafe's location"
+            width="1280"
+            height="848"
+          />
+          <figcaption class="offscreen">Our cafe's ariel view</figcaption>
+        </figure>
         <p>
+          <span class="bold">FYI!</span> We offer full-service catering for any event, large or small. We
+          understand your needs and we will cater the food to satisfy the
+          biggerst criteria of them all, both look and taste.
+        </p>
+        <p class="contact__p contact__p-last">
           Reserve a table, ask for today's special or just send us a message:
         </p>
         <form action="https://httpbin.org/get" method="get">
-          <fieldset>
-            <legend>Send us a message</legend>
-            <p>
+          <fieldset class="contact__fieldset">
+            <legend class="offscreen">Send us a message</legend>
+            <p class="form__p">
               <input
+                class="contact__input"
                 type="text"
                 name="name"
                 id="name"
@@ -200,8 +217,8 @@
                 required
               />
             </p>
-            <p>
-              <input
+            <p class="form__p">
+              <input class="contact__input"
                 type="text"
                 name="count"
                 id="count"
@@ -209,8 +226,8 @@
                 required
               />
             </p>
-            <p>
-              <input
+            <p class="form__p">
+              <input class="contact__input"
                 type="tel"
                 name="contact"
                 id="contact"
@@ -218,8 +235,8 @@
                 required
               />
             </p>
-            <p>
-              <input
+            <p class="form__p">
+              <input class="contact__input"
                 type="datetime-local"
                 name="date"
                 id="date"
@@ -227,23 +244,44 @@
                 required
               />
             </p>
-            <p>
-              <input
+            <p class="form__p">
+              <input class="contact__input"
                 type="text"
                 name="message"
                 id="message"
                 placeholder="Message\Special Requirements"
               />
             </p>
-            <button type="submit">Send Message</button>
+            <button type="submit" class="contact__button">Send Message</button>
           </fieldset>
         </form>
       </article>
     </main>
 
     <!-- || FOOTER FOR COPYRIGHT -->
-    <footer>
+    <footer class="footer">
       <p>Copyright &copy; The cafe</p>
     </footer>
+
+    <script>
+      // Tabbed Menu
+      function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(
+            " w3-dark-grey",
+            ""
+          );
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+      }
+      document.getElementById("myLink").click();
+    </script>
   </body>
 </html>
